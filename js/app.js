@@ -19,3 +19,5 @@ function alterarStatus(id) {
         imagem.classList.remove('dashboard__item__img--rented'); // Remove a classe de imagem de jogo alugado
     }
 }
+
+//nota: o if também poderia ser feito com imagem.classlist === '.dashboard__item__img--rented
