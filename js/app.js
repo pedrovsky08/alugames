@@ -10,6 +10,10 @@ function alterarStatus(id) {
     // Seleciona o botão de ação dentro do elemento
     let botao = gameClicado.querySelector('.dashboard__item__button');
 
+    // Seleciona o nome do jiogo dentro do elemento
+    let nomeJogo = gameClicado.querySelector('.dashboard__item__name');
+
+
     // Note que no classList, não é necessário usar o '.' antes da classe, apenas na declaração
 
     // Verifica se o jogo está disponível para aluguel
@@ -20,8 +24,7 @@ function alterarStatus(id) {
         jogosAlugados++;
         console.log (jogosAlugados);
     } else {
-        let confirmacao = prompt('Confirmar devolução [Y/N]:')
-        if (confirmacao = 'Y') {
+        if (confirm(`Você tem certeza que deseja devolver o jogo?`)) {
             botao.classList.remove('dashboard__item__button--return'); // Remove a classe de botão de devolução
             botao.textContent = 'Alugar'; // Altera o texto do botão para "Alugar"
             imagem.classList.remove('dashboard__item__img--rented'); // Remove a classe de imagem de jogo alugado
